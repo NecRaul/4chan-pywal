@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 cp wal_orig.json wal.json
 
@@ -18,8 +18,8 @@ green_string=$(printf "%d" 0x${col05:2:2})
 blue_string=$(printf "%d" 0x${col05:4:2})
 
 red_integer=$((red_string))
-green_integer=$((green_string/2))
-blue_integer=$((blue_string/2))
+green_integer=$((green_string / 2))
+blue_integer=$((blue_string / 2))
 
 red_hex=$(printf "%02x" $red_integer)
 green_hex=$(printf "%02x" $green_integer)
