@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp 4chanX-theme.json "$HOME/.cache/wal/4chanX-theme.json"
+cp "$(dirname "$0")/4chanX-theme.json" "$HOME/.cache/wal/4chanX-theme.json"
 
 green="789922"
 
