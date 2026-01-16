@@ -8,7 +8,7 @@ Generate a theme for [OneeChan](https://github.com/KevinParnell/OneeChan) (4chan
 
 Make sure your `colors.Xresources` file is in `~/.cache/wal/`.
 
-```Bash
+```sh
 git clone https://github.com/NecRaul/4chan-pywal.git
 cd 4chan-pywal
 ./4chan-pywal.sh
