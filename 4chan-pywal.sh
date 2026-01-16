@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 cp "$(dirname "$0")/4chanX-theme.json" "$HOME/.cache/wal/4chanX-theme.json"
 
+# shellcheck disable=SC2034
 green="789922"
 
 col00=$(head -21 "$HOME/.cache/wal/colors.Xresources" | grep color0 | sed "s/\*.color0: #//g" | tr '[:upper:]' '[:lower:]')
@@ -13,9 +14,9 @@ col06=$(head -33 "$HOME/.cache/wal/colors.Xresources" | grep color6 | sed "s/\*.
 col07=$(head -35 "$HOME/.cache/wal/colors.Xresources" | grep color7 | sed "s/\*.color7: #//g" | tr '[:upper:]' '[:lower:]')
 col08=$(head -37 "$HOME/.cache/wal/colors.Xresources" | grep color8 | sed "s/\*.color8: #//g" | tr '[:upper:]' '[:lower:]')
 
-col02_red_string=$(printf "%d" 0x${col05:0:2})
-col02_green_string=$(printf "%d" 0x${col05:2:2})
-col02_blue_string=$(printf "%d" 0x${col05:4:2})
+col02_red_string=$(printf "%d" "0x$(printf "%.2s" "$col05")")
+col02_green_string=$(printf "%d" "0x$(printf "%.2s" "${col05#??}")")
+col02_blue_string=$(printf "%d" "0x$(printf "%.2s" "${col05#????}")")
 
 col02_red_integer=$((col02_red_string))
 col02_green_integer=$((col02_green_string / 2))
@@ -27,9 +28,9 @@ col02_blue_hex=$(printf "%02x" $col02_blue_integer)
 
 col02="${col02_red_hex}${col02_green_hex}${col02_blue_hex}"
 
-col09_red_string=$(printf "%d" 0x${col00:0:2})
-col09_green_string=$(printf "%d" 0x${col00:2:2})
-col09_blue_string=$(printf "%d" 0x${col00:4:2})
+col09_red_string=$(printf "%d" "0x$(printf "%.2s" "$col00")")
+col09_green_string=$(printf "%d" "0x$(printf "%.2s" "${col00#??}")")
+col09_blue_string=$(printf "%d" "0x$(printf "%.2s" "${col00#????}")")
 
 col09_red_integer=$((col09_red_string * 3))
 col09_green_integer=$((col09_green_string * 3))
